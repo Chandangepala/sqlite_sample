@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sqlite_sample/Screens/add_data.dart';
+import 'package:sqlite_sample/Screens/fetch_data.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: AddData(),
+      home: FetchData(),//AddData(),
     );
   }
 }

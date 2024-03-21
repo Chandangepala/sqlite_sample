@@ -33,4 +33,16 @@ class DbHelper {
       int count = await db.insert(Note_table, notesModel.toMap());
       return count>0;
   }
+
+  //To fetch data from sqlite database
+  Future<List<NotesModel>> getNotes() async{
+    var db = await getDb();
+    List<NotesModel> listNotes = [];
+    var data = await db.query(Note_table);
+    for(Map<String, dynamic> eachData in data){
+      NotesModel notesModel = NotesModel.fromMap(eachData);
+      listNotes.add(notesModel);
+    }
+    return listNotes;
+  }
 }
